@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Multiselect</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./virtual-select.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tr-body">
+    <div class="tr-box">
+        <span class="tr-main-title">Multiselect</span>
+        <hr class="tr-separate-line">
+
+        <div class="tr-criteria-block">
+            <div class="tr-criteria-inner">
+                <div id="criteriaActivity" class="tr-criteria"></div>
+                <span class="tr-criteria-label">Activity</span>
+            </div>
+
+            <div class="tr-criteria-inner">
+                <div id="criteriaStatus" class="tr-criteria"></div>
+                <span class="tr-criteria-label">Status</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./virtual-select.min.js"></script>
+    <script>
+        VirtualSelect.init({
+            ele: '#criteriaActivity',
+            options: [
+                { label: 'SSS', value: 'SSS' },
+                { label: 'SPC', value: 'SPC' },
+                { label: 'SCR', value: 'SCR' },
+                { label: 'ALASK', value: 'ALASK' },
+                { label: 'ALBAN', value: 'ALBAN' },
+                { label: 'MAYO1', value: 'MAYO1' },
+                { label: 'GENZY', value: 'GENZY' }
+            ],
+
+            hideClearButton: true,
+            multiple: true,
+            placeholder: '',
+            searchPlaceholderText: 'Search here..'
+        });
+
+        const instance = VirtualSelect.init({
+            ele: '#criteriaStatus',
+            options: [
+                { label: 'Open', value: 'Open' },
+                { label: 'Open, Not Suspended, Not*W', value: 'Open, Not Suspended, Not*W' },
+                { label: 'Waiting for Client Response (*W)', value: 'Waiting for Client Response (*W)' },
+                { label: 'Suspended', value: 'Suspended' },
+                { label: 'Closed, Not Cancelled', value: 'Closed, Not Cancelled' }
+            ],
+
+            hideClearButton: true,
+            multiple: true,
+            placeholder: '',
+            searchPlaceholderText: 'Search here..'
+        });
+
+        console.log(instance);
+
+        const criteria = document.querySelectorAll('.tr-criteria');
+        if (criteria) {
+            criteria.forEach(item => {
+                item.addEventListener('beforeClose', () => {
+
+                    // changeValue();
+
+                    if (item.value.length === 0) item.nextElementSibling.classList.remove('tr-criteria-label_top');
+                });
+                item.addEventListener('beforeOpen', () => item.nextElementSibling.classList.add('tr-criteria-label_top'));
+            })
+        }
+
+        function changeValue() {
+            /*const input = document.querySelectorAll('.tr-criteria-block .vscomp-hidden-input');
+            input.forEach(item => {
+                // console.log(item.getAttribute('value'));
+
+                item.nextElementSibling.querySelector('.vscomp-value').textContent = item.getAttribute('value');
+            })*/
+
+            /*const inp = document.querySelectorAll('.tr-criteria-block .vscomp-value');
+            inp.forEach(item => {
+                // console.log(item.getAttribute('data-tooltip'));
+
+                item.textContent = item.getAttribute('data-tooltip');
+            })*/
+
+            /*const inp = document.querySelectorAll('.tr-criteria-block .vscomp-value');
+            inp.forEach(item => {
+                // console.log(item.getAttribute('data-tooltip'));
+
+                // item.textContent = item.getAttribute('data-tooltip');
+                item.setAttribute('data-tooltip-max-width', '1000px');
+            })*/
+        }
+    </script>
+</body>
+</html>

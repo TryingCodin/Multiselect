@@ -1,0 +1,130 @@
+.tr-body {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to bottom, #e3f7ff 0%, #e3f7ff 100%);
+}
+.tr-box {
+    margin: 15px 20px;
+    padding: 9px 15px 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.tr-main-title {
+    font-size: 18px;
+}
+.tr-separate-line {
+    width: 100%;
+    height: 1px;
+    background-color: #c4c4c4;
+    border: none;
+    position: absolute;
+    left: 0;
+}
+.tr-criteria-block {
+    margin-top: 50px;
+    display: flex;
+    column-gap: 20px;
+}
+.tr-criteria-block .tr-criteria-inner {
+    position: relative;
+}
+.tr-criteria-block .tr-criteria {
+    width: 150px;
+}
+.tr-criteria-block .vscomp-dropbox-container {
+    max-width: initial!important;
+    transform: translate3d(0px, -5px, 0px)!important;
+    transition-duration: 400ms!important;
+    background-color: white!important;
+    z-index: 9!important;
+}
+.tr-criteria-block .pop-comp-wrapper {
+    box-shadow: none;
+}
+.tr-criteria-block .vscomp-dropbox {
+    width: initial;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.tr-criteria-block .vscomp-option {
+    flex-wrap: initial;
+}
+
+.tr-criteria-block .vscomp-toggle-button {
+    background-color: transparent;
+    border-width: 0 0 1px 0;
+    z-index: 5;
+}
+.tr-criteria-block .vscomp-wrapper.focused .vscomp-toggle-button,
+.tr-criteria-block .vscomp-wrapper:focus .vscomp-toggle-button {
+    box-shadow: none;
+}
+.tr-criteria-block .vscomp-arrow {
+    width: initial;
+}
+.tr-criteria-block .vscomp-arrow::after {
+    content: "▼";
+    width: initial;
+    height: initial;
+    margin-top: initial;
+    font-size: 12px;
+    border: none;
+    transform: initial;
+}
+.tr-criteria-block .vscomp-wrapper.has-select-all .vscomp-toggle-all-button {
+    display: none;
+}
+.tr-criteria-block .vscomp-search-container {
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: none;
+}
+.tr-criteria-block .vscomp-wrapper.has-select-all .vscomp-search-input {
+    width: 100%;
+    border-bottom: 1px solid #c4c4c4;
+}
+.tr-criteria-block .vscomp-wrapper.has-select-all .vscomp-search-input:focus {
+    border-bottom: 1px solid #6a9ff6;
+}
+.tr-criteria-block .vscomp-search-clear {
+    display: none;
+    /*width: initial;*/
+    /*position: absolute;*/
+    /*right: 10px;*/
+}
+.tr-criteria-block .vscomp-wrapper .checkbox-icon::after {
+    border-width: 1px;
+}
+.tr-criteria-block .vscomp-wrapper.multiple .vscomp-option.selected .checkbox-icon::after {
+    border-right-color: #6a9ff6;
+    border-bottom-color: #6a9ff6;
+}
+.tr-criteria-block .vscomp-option.focused {
+    background-color: initial;
+}
+.tr-criteria-block .vscomp-option-text {
+    font-size: 13px;
+    color: #555;
+}
+.tr-criteria-block .vscomp-no-search-results {
+    min-width: 150px;
+    max-width: max-content;
+}
+.tr-criteria-block .tr-criteria-label {
+    font-size: 14px;
+    color: #c4c4c4;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: all 0.3s linear 0s;
+    z-index: 1;
+}
+.tr-criteria-block .tr-criteria-label_top {
+    color: #6a9ff6;
+    transform: translateY(-30px) scale(0.8);
+    transition: all 0.3s linear 0s;
+}
+#criteriaStatus {
+    width: 110px;
+}
